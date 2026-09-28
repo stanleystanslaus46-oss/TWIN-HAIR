@@ -109,9 +109,9 @@
   --color-filter-bg: rgba(30, 29, 27, 0.85);
   --color-tag-bg: rgba(30, 29, 27, 0.92);
   --color-card-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.65);
-  --color-marquee-bg: #0C0B0A;
-  --color-marquee-text: #FBF8F4;
-  --color-marquee-border: rgba(251, 248, 244, 0.08);
+  --color-marquee-bg: #181716;
+  --color-marquee-text: #FFFFFF;
+  --color-marquee-border: rgba(251, 248, 244, 0.14);
   --color-footer-bg: #0C0B0A;
   --color-footer-text: #FBF8F4;
   --color-footer-border: rgba(251, 248, 244, 0.1);
@@ -145,9 +145,9 @@
     --color-filter-bg: rgba(30, 29, 27, 0.85);
     --color-tag-bg: rgba(30, 29, 27, 0.92);
     --color-card-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.65);
-    --color-marquee-bg: #0C0B0A;
-    --color-marquee-text: #FBF8F4;
-    --color-marquee-border: rgba(251, 248, 244, 0.08);
+    --color-marquee-bg: #181716;
+    --color-marquee-text: #FFFFFF;
+    --color-marquee-border: rgba(251, 248, 244, 0.14);
     --color-footer-bg: #0C0B0A;
     --color-footer-text: #FBF8F4;
     --color-footer-border: rgba(251, 248, 244, 0.1);
@@ -759,13 +759,16 @@ h1, h2, h3, h4, .font-serif {
 .marquee-container {
   width: 100%;
   overflow: hidden;
-  background-color: var(--color-text);
-  color: #FAF7F2;
-  padding: 1.1rem 0;
+  background-color: var(--color-marquee-bg);
+  color: var(--color-marquee-text);
+  padding: 1.15rem 0;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--color-marquee-border);
+  border-bottom: 1px solid var(--color-marquee-border);
   user-select: none;
+  transition: background-color var(--duration-normal) ease,
+              border-color var(--duration-normal) ease,
+              color var(--duration-normal) ease;
 }
 
 .marquee-track {
@@ -786,18 +789,25 @@ h1, h2, h3, h4, .font-serif {
   gap: 1.8rem;
   font-family: var(--font-serif);
   font-size: clamp(1.15rem, 1.8vw, 1.45rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   padding: 0 1rem;
+  color: var(--color-marquee-text);
+}
+
+.marquee-item span {
+  color: inherit;
 }
 
 .marquee-item .sep {
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--color-accent);
+  box-shadow: 0 0 6px var(--color-accent);
+  flex-shrink: 0;
 }
 
 @keyframes marqueeScroll {
