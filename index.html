@@ -97,9 +97,9 @@
     <!-- 01. HEADER & TOP BAR CONTRACT -->
     <header class="site-header" id="site-header">
       <div class="container nav-container">
-        <!-- Zone 1: Brand Wordmark & Hair Profile Emblem -->
+        <!-- Zone 1: Brand Wordmark & Official Free Logo -->
         <a href="#hero" class="brand-mark" aria-label="TwinHair & Beauty Salon Home">
-          <img src="/assets/images/logo.jpg" alt="TwinHair emblem" class="brand-emblem" width="32" height="32" />
+          <img src="/assets/images/logo.jpg" alt="TwinHair & Beauty Salon Logo" class="brand-logo" width="46" height="46" />
           <span class="brand-name">TwinHair &amp; Beauty Salon</span>
         </a>
 
@@ -143,7 +143,7 @@
     <div id="mobile-menu" class="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true">
       <div class="mobile-menu-header">
         <div class="brand-mark">
-          <img src="/assets/images/logo.jpg" alt="" class="brand-emblem" width="30" height="30" />
+          <img src="/assets/images/logo.jpg" alt="TwinHair Logo" class="brand-logo" width="40" height="40" />
           <span class="brand-name">TwinHair Salon</span>
         </div>
         <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -811,7 +811,7 @@
           
           <div class="footer-brand-col">
             <div class="brand-mark">
-              <img src="/assets/images/logo.jpg" alt="" class="brand-emblem" width="34" height="34" />
+              <img src="/assets/images/logo.jpg" alt="TwinHair & Beauty Logo" class="brand-logo" width="48" height="48" />
               <span class="brand-name" style="color: #FFFFFF;">TwinHair &amp; Beauty</span>
             </div>
             <p style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.6; max-width: 32ch;">
@@ -917,8 +917,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+    <!-- React Root Mount Container -->
+    <div id="root"></div>
+
     <!-- Master Application Script -->
     <script type="module" src="/js/app.js"></script>
+
+    <!-- React Application Script -->
+    <script type="module" src="/src/main.tsx"></script>
 
   </body>
 </html>

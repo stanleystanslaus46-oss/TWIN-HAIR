@@ -204,22 +204,10 @@ function selectServiceAndScroll(serviceName) {
 }
 
 /* ==========================================================================
-   05. HEADER SCROLL EFFECT
+   05. HEADER (STATIC & NON-ANIMATING)
    ========================================================================== */
 function initHeaderScroll() {
-  const header = document.querySelector(".site-header");
-  if (!header) return;
-
-  const handleScroll = () => {
-    if (window.scrollY > 40) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll();
+  // Static header contract: intentionally empty to avoid scroll-bound animations or class toggles
 }
 
 /* ==========================================================================
