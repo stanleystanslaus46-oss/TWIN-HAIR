@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>TwinHair & Beauty Salon | Premium Hair & Beauty Experience | Dar es Salaam</title>
+    <meta name="description" content="Editorial, fashion-forward hair and beauty salon in Dar es Salaam. Specializing in knotless goddess braids, passion twists, precision cornrows, loc care, and silk press treatments across Sinza Madukani & Lufungila." />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="TwinHair & Beauty Salon | Dar es Salaam" />
+    <meta property="og:description" content="A modern hair and beauty sanctuary in Dar es Salaam. Master braiders, trend-led looks, and personalized care at Sinza Madukani & Lufungila." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/images/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TwinHair & Beauty Salon | Dar es Salaam" />
+    <meta name="twitter:description" content="Editorial, fashion-forward hair and beauty sanctuary in Dar es Salaam. Book your appointment at Sinza Madukani or Lufungila." />
+    <meta name="twitter:image" content="/assets/images/hero.jpg" />
+
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Plus Jakarta Sans (Modern Sans), JetBrains Mono (Tabular Numerals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- Immediate theme initializer to avoid layout/color flash -->
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('twinhair-theme');
+          if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Schema.org Structured Data: HairSalon in Dar es Salaam -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "TwinHair & Beauty Salon",
+      "image": "/assets/images/hero.jpg",
+      "telephone": "+255650125378",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Sinza Madukani Street",
+          "addressLocality": "Kinondoni",
+          "addressRegion": "Dar es Salaam",
+          "addressCountry": "TZ"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Lufungila Area",
+          "addressLocality": "Kinondoni",
+          "addressRegion": "Dar es Salaam",
+          "addressCountry": "TZ"
+        }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.7833,
+        "longitude": 39.2333
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:30",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.tiktok.com/@twinhair.beautysalon"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- Subtle Desktop Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+    <div id="custom-cursor-label" class="custom-cursor-label" aria-hidden="true"></div>
+
+    <!-- 01. HEADER & TOP BAR CONTRACT -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+        <!-- Zone 1: Brand Wordmark & Hair Profile Emblem -->
+        <a href="#hero" class="brand-mark" aria-label="TwinHair & Beauty Salon Home">
+          <img src="/assets/images/logo.jpg" alt="TwinHair emblem" class="brand-emblem" width="32" height="32" />
+          <span class="brand-name">TwinHair &amp; Beauty Salon</span>
+        </a>
+
+        <!-- Zone 2: Clean 4–5 Navigation Links -->
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#styles" class="nav-link">Styles</a>
+          <a href="#transformation" class="nav-link">Transformation</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#locations" class="nav-link">Locations</a>
+        </nav>
+
+        <!-- Zone 3: Primary Actions -->
+        <div class="header-actions">
+          <!-- Theme Toggle (Desktop) -->
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-desktop" aria-label="Switch between light and dark editorial theme" title="Toggle night mode">
+            <span class="theme-toggle-icon">
+              <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+            <span class="theme-toggle-label">Night</span>
+          </button>
+
+          <a href="tel:+255650125378" class="header-tel-link" title="Call TwinHair Salon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span class="numeral">0650125378</span>
+          </a>
+          <a href="#booking" class="btn-primary" data-cursor="BOOK">
+            <span>Book Appointment</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <!-- Mobile Menu Trigger -->
+          <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 02. FULL-SCREEN MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="mobile-menu-header">
+        <div class="brand-mark">
+          <img src="/assets/images/logo.jpg" alt="" class="brand-emblem" width="30" height="30" />
+          <span class="brand-name">TwinHair Salon</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <!-- Mobile Theme Toggle -->
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-mobile" aria-label="Switch between light and dark theme">
+            <span class="theme-toggle-icon">
+              <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+            <span class="theme-toggle-label">Night</span>
+          </button>
+          <button type="button" class="mobile-toggle" id="mobile-menu-close" aria-label="Close mobile navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+        <a href="#services" class="mobile-nav-link">
+          <span>Services</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#styles" class="mobile-nav-link">
+          <span>Styles</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#transformation" class="mobile-nav-link">
+          <span>Transformation</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#experience" class="mobile-nav-link">
+          <span>The Experience</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#locations" class="mobile-nav-link">
+          <span>Locations</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </nav>
+
+      <div class="mobile-menu-footer">
+        <a href="#booking" class="btn-accent mobile-menu-cta" style="width: 100%; justify-content: center; padding: 0.9rem;">
+          <span>Book Appointment</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <div class="mobile-contact-row">
+          <span>Sinza: <a href="tel:+255650125378" class="numeral">0650125378</a></span>
+          <span>·</span>
+          <span>Lufungila: <a href="tel:+255768273770" class="numeral">0768273770</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="main-content">
+
+      <!-- 03. HERO SECTION (EDITORIAL OPENING) -->
+      <section class="hero-section" id="hero">
+        <div class="container">
+          <div class="hero-grid">
+            
+            <div class="hero-content">
+              <div class="hero-tag">
+                <span class="hero-tag-dot" aria-hidden="true"></span>
+                <span>Dar es Salaam Beauty Editorial</span>
+              </div>
+
+              <h1 class="hero-heading">
+                YOUR HAIR.<br />
+                YOUR STYLE.<br />
+                <span class="italic-accent">YOUR CONFIDENCE.</span>
+              </h1>
+
+              <p class="hero-description">
+                A high-fashion hair sanctuary in Dar es Salaam. We craft bespoke knotless braids, sculpted locs, precision cornrows, and restorative hair treatments tailored to your natural beauty.
+              </p>
+
+              <div class="hero-cta-group">
+                <a href="#booking" class="btn-accent" data-cursor="BOOK">
+                  <span>Book Appointment</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="#styles" class="btn-secondary" data-cursor="EXPLORE">
+                  <span>Explore Styles</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+
+              <div class="hero-locations-meta">
+                <span>Sinza Madukani</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span>Lufungila</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span>Dar es Salaam, Tanzania</span>
+              </div>
+            </div>
+
+            <div class="hero-media-wrap">
+              <div class="hero-image-frame" data-cursor="VIEW">
+                <img src="/assets/images/hero.jpg" alt="TwinHair & Beauty Salon editorial hair styling in Dar es Salaam" width="700" height="520" fetchpriority="high" />
+              </div>
+
+              <div class="hero-floating-badge" aria-hidden="true">
+                <span class="badge-label">Artisan Standard</span>
+                <span class="badge-value">Tension-Free Hair Artistry</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. MOVING MARQUEE -->
+      <aside class="marquee-container" aria-label="Salon highlights ticker">
+        <div class="marquee-track">
+          <div class="marquee-item">
+            <span>TWINHAIR</span><span class="sep"></span>
+            <span>HAIR ARTISTRY</span><span class="sep"></span>
+            <span>BEAUTY</span><span class="sep"></span>
+            <span>STYLE</span><span class="sep"></span>
+            <span>CONFIDENCE</span><span class="sep"></span>
+            <span>SINZA MADUKANI</span><span class="sep"></span>
+            <span>LUFUNGILA</span><span class="sep"></span>
+            <span>DAR ES SALAAM</span><span class="sep"></span>
+          </div>
+          <div class="marquee-item" aria-hidden="true">
+            <span>TWINHAIR</span><span class="sep"></span>
+            <span>HAIR ARTISTRY</span><span class="sep"></span>
+            <span>BEAUTY</span><span class="sep"></span>
+            <span>STYLE</span><span class="sep"></span>
+            <span>CONFIDENCE</span><span class="sep"></span>
+            <span>SINZA MADUKANI</span><span class="sep"></span>
+            <span>LUFUNGILA</span><span class="sep"></span>
+            <span>DAR ES SALAAM</span><span class="sep"></span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 05. EDITORIAL STATEMENT / PHILOSOPHY -->
+      <section class="section-spacing statement-section reveal-on-scroll" id="about">
+        <div class="container">
+          <div class="statement-grid">
+            <div class="statement-kicker">
+              <span>01. The Aesthetic</span>
+            </div>
+            <div>
+              <p class="statement-prose">
+                We believe exceptional hair styling is not merely routine maintenance—it is a <em>quiet expression of confidence</em>, cultural heritage, and personal grace.
+              </p>
+              <p class="statement-sub">
+                From our two locations in Sinza Madukani and Lufungila, our master stylists preserve scalp health and hair integrity while delivering the most sought-after editorial silhouettes in Dar es Salaam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="hairline" />
+
+      <!-- 06. SERVICES SECTION (EXPLORE THE SERVICES) -->
+      <section class="section-spacing services-section" id="services">
+        <div class="container">
+          
+          <div class="section-head section-head-split reveal-on-scroll">
+            <div>
+              <span class="eyebrow">02. Curated Menu</span>
+              <h2 class="section-title">Explore the Services</h2>
+            </div>
+            <!-- Category Filter Controls -->
+            <div class="filter-bar" role="toolbar" aria-label="Filter services by category">
+              <button type="button" class="filter-btn active" data-filter="all">All Styles</button>
+              <button type="button" class="filter-btn" data-filter="braids">Braids</button>
+              <button type="button" class="filter-btn" data-filter="twists">Twists &amp; Locs</button>
+              <button type="button" class="filter-btn" data-filter="cornrows">Cornrows</button>
+              <button type="button" class="filter-btn" data-filter="natural">Natural &amp; Silk</button>
+            </div>
+          </div>
+
+          <!-- Services Grid Container (Data-Driven Rendered) -->
+          <div class="services-grid" id="services-grid-container">
+            <!-- Dynamically populated by /js/app.js -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 07. STYLE GALLERY (STYLES WORTH SAVING) -->
+      <section class="section-spacing gallery-section" id="styles">
+        <div class="container">
+          
+          <div class="section-head reveal-on-scroll">
+            <span class="eyebrow">03. Portfolio</span>
+            <h2 class="section-title">Styles Worth Saving</h2>
+            <p class="lead-p" style="max-width: 50ch;">
+              Curated editorial captures from our salon chairs. Clean parting, immaculate edges, and authentic textures.
+            </p>
+          </div>
+
+          <div class="gallery-masonry">
+            <!-- Item 1: Large Wide -->
+            <article class="gallery-item gallery-col-large reveal-on-scroll" data-cursor="VIEW">
+              <img src="/assets/images/gallery-cornrows.jpg" alt="Precision stitch cornrows in Dar es Salaam" loading="lazy" width="750" height="470" />
+              <div class="gallery-caption">
+                <span class="gallery-caption-title">Geometric Stitch Cornrows</span>
+                <span class="gallery-caption-tag">Protective Styling</span>
+              </div>
+            </article>
+
+            <!-- Item 2: Tall Vertical -->
+            <article class="gallery-item gallery-col-tall reveal-on-scroll" data-cursor="VIEW">
+              <img src="/assets/images/service-braids.jpg" alt="Knotless braids with curly ends" loading="lazy" width="550" height="690" />
+              <div class="gallery-caption">
+                <span class="gallery-caption-title">Knotless Goddess Braids</span>
+                <span class="gallery-caption-tag">Bohemian Finish</span>
+              </div>
+            </article>
+
+            <!-- Item 3: Equal Left -->
+            <article class="gallery-item gallery-col-equal-1 reveal-on-scroll" data-cursor="VIEW">
+              <img src="/assets/images/service-locs.jpg" alt="Passion twists and butterfly locs" loading="lazy" width="600" height="450" />
+              <div class="gallery-caption">
+                <span class="gallery-caption-title">Butterfly Passion Twists</span>
+                <span class="gallery-caption-tag">Soft Volume</span>
+              </div>
+            </article>
+
+            <!-- Item 4: Equal Right -->
+            <article class="gallery-item gallery-col-equal-2 reveal-on-scroll" data-cursor="VIEW">
+              <img src="/assets/images/gallery-curls.jpg" alt="Defined curl moisture bath" loading="lazy" width="600" height="450" />
+              <div class="gallery-caption">
+                <span class="gallery-caption-title">Defined Spiral Hydration</span>
+                <span class="gallery-caption-tag">Natural Texture</span>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 08. INTERACTIVE BEFORE / AFTER TRANSFORMATION -->
+      <section class="section-spacing transformation-section" id="transformation">
+        <div class="container">
+          
+          <div class="section-head reveal-on-scroll" style="text-align: center; align-items: center;">
+            <span class="eyebrow">04. The Craft</span>
+            <h2 class="section-title">The Transformation</h2>
+            <p class="lead-p" style="max-width: 48ch;">
+              Experience the difference of dedicated hydration steaming and precision silk styling. Drag the slider to reveal the finish.
+            </p>
+          </div>
+
+          <div class="transformation-wrapper reveal-on-scroll">
+            <div class="comparison-box" id="comparison-box" data-cursor="DRAG">
+              <!-- After Image (Base) -->
+              <div class="comparison-image-after">
+                <img src="/assets/images/transformation-after.jpg" alt="Hair styled with smooth silk press curls" width="980" height="610" />
+                <span class="comparison-label label-after">After: Silk Finish</span>
+              </div>
+
+              <!-- Before Image (Clipped Overlay) -->
+              <div class="comparison-image-before" id="comparison-before-wrap">
+                <img src="/assets/images/transformation-before.jpg" id="comparison-before-img" alt="Natural raw coily hair texture before salon treatment" width="980" height="610" />
+                <span class="comparison-label label-before">Before: Raw Texture</span>
+              </div>
+
+              <!-- Divider Line -->
+              <div class="comparison-divider-line" aria-hidden="true"></div>
+
+              <!-- Draggable Divider Handle -->
+              <div class="comparison-slider-handle" id="comparison-handle" aria-label="Drag slider to compare before and after">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline><polyline points="9 18 3 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+            <p class="comparison-hint">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12H3M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+              <span>Drag or use left/right arrows to interact</span>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 09. TIKTOK / SOCIAL INSPIRATION SECTION -->
+      <section class="section-spacing social-section reveal-on-scroll" id="social">
+        <div class="container">
+          
+          <div class="section-head section-head-split">
+            <div>
+              <span class="eyebrow">05. Digital Inspiration</span>
+              <h2 class="section-title">From Your Feed to Your Hair</h2>
+              <p class="lead-p" style="max-width: 48ch;">
+                See a hairstyle you adore on TikTok or Instagram? Bring the screenshot or video to TwinHair, and our braiders will execute every detail.
+              </p>
+            </div>
+            <div>
+              <a href="https://www.tiktok.com/@twinhair.beautysalon" target="_blank" rel="noopener noreferrer" class="btn-secondary" data-cursor="VISIT">
+                <span>Follow on TikTok</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="social-feed-grid">
+            <article class="social-card">
+              <div class="social-card-thumb">
+                <img src="/assets/images/service-braids.jpg" alt="Braiding process demonstration" loading="lazy" width="320" height="420" />
+                <span class="social-play-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Reel</span>
+                </span>
+              </div>
+              <div class="social-card-info">
+                <h4 class="social-card-title">Knotless Goddess Parting Technique</h4>
+                <span class="social-card-handle">@twinhair.beautysalon</span>
+              </div>
+            </article>
+
+            <article class="social-card">
+              <div class="social-card-thumb">
+                <img src="/assets/images/gallery-cornrows.jpg" alt="Stitch braids tutorial snippet" loading="lazy" width="320" height="420" />
+                <span class="social-play-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Reel</span>
+                </span>
+              </div>
+              <div class="social-card-info">
+                <h4 class="social-card-title">Crisp Stitch Lines &amp; Edge Care</h4>
+                <span class="social-card-handle">@twinhair.beautysalon</span>
+              </div>
+            </article>
+
+            <article class="social-card">
+              <div class="social-card-thumb">
+                <img src="/assets/images/service-locs.jpg" alt="Passion twists styling session" loading="lazy" width="320" height="420" />
+                <span class="social-play-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Reel</span>
+                </span>
+              </div>
+              <div class="social-card-info">
+                <h4 class="social-card-title">Lightweight Passion Twists Setup</h4>
+                <span class="social-card-handle">@twinhair.beautysalon</span>
+              </div>
+            </article>
+
+            <article class="social-card">
+              <div class="social-card-thumb">
+                <img src="/assets/images/transformation-after.jpg" alt="Silk press hydration reveal" loading="lazy" width="320" height="420" />
+                <span class="social-play-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Reel</span>
+                </span>
+              </div>
+              <div class="social-card-info">
+                <h4 class="social-card-title">Silk Press Glass Hair Results</h4>
+                <span class="social-card-handle">@twinhair.beautysalon</span>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 10. WHY TWINHAIR — CORE EDITORIAL PILLARS -->
+      <section class="section-spacing pillars-section reveal-on-scroll">
+        <div class="container">
+          
+          <div class="section-head">
+            <span class="eyebrow">06. Pillars of Care</span>
+            <h2 class="section-title">Why TwinHair</h2>
+          </div>
+
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <span class="pillar-number">01</span>
+              <h3 class="pillar-title">Master Braiders</h3>
+              <p class="pillar-desc">
+                Decades of collective technique. We prioritize gentle scalp tension, clean geometric partings, and protective longevity for every strand.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <span class="pillar-number">02</span>
+              <h3 class="pillar-title">Trend-Led Looks</h3>
+              <p class="pillar-desc">
+                Continually updating our portfolio with international runway and African heritage trends so you always step out modern and refreshed.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <span class="pillar-number">03</span>
+              <h3 class="pillar-title">Two Locations</h3>
+              <p class="pillar-desc">
+                Convenient salons located at Sinza Madukani and Lufungila. Easily accessible with welcoming staff ready to host your styling session.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <span class="pillar-number">04</span>
+              <h3 class="pillar-title">Tailored Care</h3>
+              <p class="pillar-desc">
+                We believe beauty begins with health. Every service includes expert consultations on scalp nourishment and home maintenance regimens.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 11. SALON EXPERIENCE (MORE THAN A SALON) -->
+      <section class="section-spacing experience-section reveal-on-scroll" id="experience">
+        <div class="container">
+          <div class="experience-grid">
+            <div class="experience-media" data-cursor="VIEW">
+              <img src="/assets/images/salon.jpg" alt="Interior atmosphere at TwinHair Salon" loading="lazy" width="650" height="440" />
+            </div>
+
+            <div class="experience-content">
+              <span class="eyebrow">07. Sanctuary</span>
+              <h2 class="section-title">More than a Salon</h2>
+              <p class="lead-p">
+                A place where style, confidence, and self-expression meet. Designed as a calm oasis away from the city hustle, where your hair care is given dedicated unhurried focus.
+              </p>
+
+              <div class="ritual-list">
+                <div class="ritual-item">
+                  <div class="ritual-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  </div>
+                  <div class="ritual-text">
+                    <h4>Punctual Appointments</h4>
+                    <p>We respect your schedule. Dedicated time slots prevent long waiting room queues.</p>
+                  </div>
+                </div>
+
+                <div class="ritual-item">
+                  <div class="ritual-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                  </div>
+                  <div class="ritual-text">
+                    <h4>Hydration Steam Baths</h4>
+                    <p>Deep conditioning steam bowls that open cuticles and restore natural elasticity.</p>
+                  </div>
+                </div>
+
+                <div class="ritual-item">
+                  <div class="ritual-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </div>
+                  <div class="ritual-text">
+                    <h4>Personalized Hospitality</h4>
+                    <p>Complimentary refreshments, calm ambient music, and a warm welcoming team.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. TWO LOCATIONS SECTION (FIND YOUR TWINHAIR) -->
+      <section class="section-spacing locations-section reveal-on-scroll" id="locations">
+        <div class="container">
+          
+          <div class="section-head">
+            <span class="eyebrow">08. Salons</span>
+            <h2 class="section-title">Find Your TwinHair</h2>
+            <p class="lead-p" style="max-width: 48ch;">
+              Two prime hubs in Dar es Salaam. Choose your nearest salon and connect directly with our branch team.
+            </p>
+          </div>
+
+          <div class="locations-grid">
+            <!-- Location 1: Sinza Madukani -->
+            <div class="location-card">
+              <div class="location-card-head">
+                <span class="eyebrow">Branch 01</span>
+                <h3 class="location-branch-name">Sinza Madukani</h3>
+                <p class="lead-p" style="font-size: 0.95rem;">Dar es Salaam, Tanzania</p>
+              </div>
+
+              <div class="location-details">
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Sinza Madukani Street, Kinondoni District</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  <span>Mon – Sat: 08:30 – 20:00 · Sun: 10:00 – 18:00</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <a href="tel:+255650125378" class="numeral" style="font-weight: 600; text-decoration: underline;">0650125378</a>
+                </div>
+              </div>
+
+              <div class="location-actions">
+                <a href="tel:+255650125378" class="btn-primary">
+                  <span>Call Sinza</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+                <a href="https://maps.google.com/?q=Sinza+Madukani+Dar+es+Salaam" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  <span>Directions</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Location 2: Lufungila -->
+            <div class="location-card">
+              <div class="location-card-head">
+                <span class="eyebrow">Branch 02</span>
+                <h3 class="location-branch-name">Lufungila</h3>
+                <p class="lead-p" style="font-size: 0.95rem;">Dar es Salaam, Tanzania</p>
+              </div>
+
+              <div class="location-details">
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Lufungila Area, Near Mwenge / Sinza Junction</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  <span>Mon – Sat: 08:30 – 20:00 · Sun: 10:00 – 18:00</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <a href="tel:+255768273770" class="numeral" style="font-weight: 600; text-decoration: underline;">0768273770</a>
+                </div>
+              </div>
+
+              <div class="location-actions">
+                <a href="tel:+255768273770" class="btn-primary">
+                  <span>Call Lufungila</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+                <a href="https://maps.google.com/?q=Lufungila+Dar+es+Salaam" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  <span>Directions</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 13. CONVERSION BOOKING EXPERIENCE -->
+      <section class="section-spacing booking-section" id="booking">
+        <div class="container">
+          <div class="booking-layout">
+            
+            <div class="booking-info reveal-on-scroll">
+              <span class="eyebrow">09. Reserve Your Chair</span>
+              <h2 class="section-title">Book Your Appointment</h2>
+              <p class="lead-p">
+                Select your preferred branch, style, and arrival time. Submitting prepares your reservation details and connects directly with our WhatsApp booking team in Dar es Salaam.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  <span>Instant confirmation via WhatsApp concierge</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>No upfront payment required to book</span>
+                </div>
+                <div class="detail-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Need urgent styling? Call <a href="tel:+255650125378" class="numeral" style="text-decoration: underline; font-weight: 600;">0650125378</a></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="booking-card reveal-on-scroll">
+              <form class="booking-form" id="appointment-form" novalidate>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="booking-name" class="form-label">Your Full Name *</label>
+                    <input type="text" id="booking-name" name="name" class="form-input" placeholder="e.g. Amina Hassan" required autocomplete="name" />
+                    <span class="form-error">Please enter your name.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="booking-phone" class="form-label">Phone / WhatsApp Number *</label>
+                    <input type="tel" id="booking-phone" name="phone" class="form-input" placeholder="e.g. 0650 125 378" required autocomplete="tel" />
+                    <span class="form-error">Please enter a valid phone number.</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="booking-location" class="form-label">Preferred Branch *</label>
+                    <select id="booking-location" name="location" class="form-select" required>
+                      <option value="">Select location...</option>
+                      <option value="Sinza Madukani">Sinza Madukani</option>
+                      <option value="Lufungila">Lufungila</option>
+                    </select>
+                    <span class="form-error">Please select a salon location.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="booking-service" class="form-label">Desired Service *</label>
+                    <select id="booking-service" name="service" class="form-select" required>
+                      <option value="">Select service...</option>
+                      <!-- Populated dynamically via JS -->
+                    </select>
+                    <span class="form-error">Please choose a service.</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="booking-date" class="form-label">Preferred Date *</label>
+                    <input type="date" id="booking-date" name="date" class="form-input" required />
+                    <span class="form-error">Please pick an appointment date.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="booking-time" class="form-label">Preferred Time Window *</label>
+                    <select id="booking-time" name="time" class="form-select" required>
+                      <option value="">Select arrival window...</option>
+                      <option value="Morning (09:00 – 12:00)">Morning (09:00 – 12:00)</option>
+                      <option value="Midday (12:00 – 15:00)">Midday (12:00 – 15:00)</option>
+                      <option value="Afternoon (15:00 – 18:00)">Afternoon (15:00 – 18:00)</option>
+                      <option value="Evening (18:00 – 20:00)">Evening (18:00 – 20:00)</option>
+                    </select>
+                    <span class="form-error">Please choose a time slot.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="booking-notes" class="form-label">Hairstyle Inspiration or Special Notes</label>
+                  <textarea id="booking-notes" name="notes" class="form-textarea" placeholder="E.g., I have waist-length braids in mind, or hair wash & steam needed first..."></textarea>
+                </div>
+
+                <button type="submit" class="booking-submit-btn" data-cursor="BOOK">
+                  <span>Send Reservation via WhatsApp</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <div id="booking-feedback" class="booking-feedback" role="alert"></div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 14. FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        
+        <h2 class="footer-hero-statement">
+          YOUR NEXT LOOK STARTS HERE.
+        </h2>
+
+        <div class="footer-grid">
+          
+          <div class="footer-brand-col">
+            <div class="brand-mark">
+              <img src="/assets/images/logo.jpg" alt="" class="brand-emblem" width="34" height="34" />
+              <span class="brand-name" style="color: #FFFFFF;">TwinHair &amp; Beauty</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.6; max-width: 32ch;">
+              Contemporary beauty editorial and protective hair styling sanctuary rooted in Dar es Salaam, Tanzania.
+            </p>
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 0.5rem;">
+              <a href="https://www.tiktok.com/@twinhair.beautysalon" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="color: #FAF7F2; border-color: rgba(255,255,255,0.2); padding: 0.45rem 0.9rem; font-size: 0.8rem;">
+                <span>TikTok @twinhair.beautysalon</span>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#services" class="footer-link">Services</a></li>
+              <li><a href="#styles" class="footer-link">Style Gallery</a></li>
+              <li><a href="#transformation" class="footer-link">The Transformation</a></li>
+              <li><a href="#experience" class="footer-link">Salon Experience</a></li>
+              <li><a href="#locations" class="footer-link">Locations</a></li>
+              <li><a href="#booking" class="footer-link">Book Appointment</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Locations</h4>
+            <div class="footer-links" style="font-size: 0.88rem; color: rgba(250,247,242,0.85); line-height: 1.6;">
+              <p>
+                <strong style="color: #FFFFFF;">Sinza Madukani</strong><br />
+                Kinondoni District, Dar es Salaam<br />
+                <a href="tel:+255650125378" class="numeral" style="color: var(--color-accent-subtle); text-decoration: underline;">0650125378</a>
+              </p>
+              <p style="margin-top: 0.75rem;">
+                <strong style="color: #FFFFFF;">Lufungila</strong><br />
+                Near Mwenge / Sinza Junction<br />
+                <a href="tel:+255768273770" class="numeral" style="color: var(--color-accent-subtle); text-decoration: underline;">0768273770</a>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Salon Hours</h4>
+            <div class="footer-links" style="font-size: 0.88rem; color: rgba(250,247,242,0.85); line-height: 1.6;">
+              <p>
+                <strong style="color: #FFFFFF;">Monday – Saturday</strong><br />
+                <span class="numeral">08:30 – 20:00</span>
+              </p>
+              <p style="margin-top: 0.75rem;">
+                <strong style="color: #FFFFFF;">Sunday</strong><br />
+                <span class="numeral">10:00 – 18:00</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 TwinHair &amp; Beauty Salon. All rights reserved. Dar es Salaam, Tanzania.</p>
+          <div style="display: flex; gap: 1.5rem;">
+            <span>Sinza Madukani</span>
+            <span>·</span>
+            <span>Lufungila</span>
+            <span>·</span>
+            <a href="#hero" style="text-decoration: underline;">Back to Top</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- 15. MOBILE STICKY BOTTOM ACTION BAR -->
+    <div id="mobile-sticky-action" class="mobile-sticky-action" aria-label="Mobile quick actions">
+      <div class="mobile-sticky-inner">
+        <a href="#booking" class="mobile-sticky-btn">
+          <span>Book Appointment</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <a href="tel:+255650125378" class="mobile-sticky-call" title="Call TwinHair Salon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- GSAP & ScrollTrigger Libraries via reliable CDN (Vanilla Script) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Master Application Script -->
+    <script type="module" src="/js/app.js"></script>
+
+  </body>
+</html>

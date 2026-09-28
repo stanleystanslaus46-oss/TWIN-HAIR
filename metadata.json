@@ -1,0 +1,6 @@
+{
+  "name": "TwinHair & Beauty Salon",
+  "description": "Editorial, fashion-forward digital experience and appointment booking for TwinHair & Beauty Salon in Sinza Madukani & Lufungila, Dar es Salaam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
