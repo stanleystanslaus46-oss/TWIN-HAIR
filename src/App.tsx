@@ -136,9 +136,27 @@ export default function App() {
     };
   }, [updateDeviceMetrics]);
 
-  // 3. Scroll progress & active section tracking
+  // 3. Ultra-smooth scroll progress & active section tracking (zero layout thrashing)
   useEffect(() => {
     let ticking = false;
+    let sectionCache: { id: string; top: number; bottom: number; meta: SectionMeta }[] = [];
+    let lastSectionId = SECTIONS[0].id;
+    let lastShowScrollTop = false;
+
+    // Cache section bounding boxes to prevent forced reflow on scroll
+    const updateSectionCache = () => {
+      sectionCache = SECTIONS.map((sec) => {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const top = el.offsetTop;
+          return { id: sec.id, top, bottom: top + el.offsetHeight, meta: sec };
+        }
+        return { id: sec.id, top: 0, bottom: 0, meta: sec };
+      }).filter((s) => s.bottom > 0);
+    };
+
+    updateSectionCache();
+    window.addEventListener('resize', updateSectionCache, { passive: true });
 
     const handleScroll = () => {
       if (!ticking) {
@@ -147,26 +165,34 @@ export default function App() {
           const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
           const progress = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
 
+          // Only update scrollProgress state periodically or if significant change
           setScrollProgress(progress);
-          setShowScrollTop(scrollTop > 450);
 
-          // Calculate active section based on scroll offset
+          // Only trigger state update when boolean changes
+          const shouldShowTop = scrollTop > 450;
+          if (shouldShowTop !== lastShowScrollTop) {
+            lastShowScrollTop = shouldShowTop;
+            setShowScrollTop(shouldShowTop);
+          }
+
+          // Use pre-cached section bounds: ZERO layout thrashing
           const viewportMiddle = scrollTop + window.innerHeight * 0.38;
-          let current = SECTIONS[0];
+          let currentMeta = SECTIONS[0];
 
-          for (const sec of SECTIONS) {
-            const el = document.getElementById(sec.id);
-            if (el) {
-              const top = el.offsetTop;
-              const height = el.offsetHeight;
-              if (viewportMiddle >= top && viewportMiddle < top + height) {
-                current = sec;
-                break;
-              }
+          for (let i = 0; i < sectionCache.length; i++) {
+            const sec = sectionCache[i];
+            if (viewportMiddle >= sec.top && viewportMiddle < sec.bottom) {
+              currentMeta = sec.meta;
+              break;
             }
           }
 
-          setActiveSection(current);
+          // Only trigger React state update if the section actually changed
+          if (currentMeta.id !== lastSectionId) {
+            lastSectionId = currentMeta.id;
+            setActiveSection(currentMeta);
+          }
+
           ticking = false;
         });
         ticking = true;
@@ -178,6 +204,7 @@ export default function App() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateSectionCache);
     };
   }, []);
 

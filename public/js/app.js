@@ -500,26 +500,36 @@ function initCustomCursor() {
   const label = document.getElementById("custom-cursor-label");
   if (!cursor || !label) return;
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-
-  window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
+  let mouseX = -100;
+  let mouseY = -100;
+  let cursorX = -100;
+  let cursorY = -100;
+  let isRunning = false;
 
   const renderCursor = () => {
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
+    const dx = mouseX - cursorX;
+    const dy = mouseY - cursorY;
+    cursorX += dx * 0.25;
+    cursorY += dy * 0.25;
 
     cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
     label.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
 
-    requestAnimationFrame(renderCursor);
+    if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
+      requestAnimationFrame(renderCursor);
+    } else {
+      isRunning = false;
+    }
   };
-  requestAnimationFrame(renderCursor);
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!isRunning) {
+      isRunning = true;
+      requestAnimationFrame(renderCursor);
+    }
+  }, { passive: true });
 
   // Hover detection
   document.querySelectorAll("[data-cursor]").forEach(el => {
