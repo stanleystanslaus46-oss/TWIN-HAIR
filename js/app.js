@@ -283,6 +283,10 @@ function initServiceFilters() {
           card.style.display = "none";
         }
       });
+
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
     });
   });
 }
@@ -552,72 +556,533 @@ function initCustomCursor() {
 }
 
 /* ==========================================================================
-   13. GSAP ENTRANCE & SCROLL ANIMATIONS
+   13. GSAP ENTRANCE & SCROLL ANIMATIONS (FAIL-SAFE EDITORIAL SCROLL)
    ========================================================================== */
 function initGsapAnimations() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // If reduced motion is requested, guarantee everything is immediately visible
+    document.querySelectorAll(".pillar-card, .location-card, .section-head, .service-card, .ritual-item").forEach(el => {
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+    });
+    return;
+  }
 
   if (typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // Hero entrance sequence
+  // 00. Hero Entrance Sequence
   const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
   heroTl
     .from(".site-header", {
       y: -25,
       opacity: 0,
-      duration: 0.8
+      duration: 0.8,
+      clearProps: "all"
     })
     .from(".hero-tag", {
       opacity: 0,
       y: 15,
-      duration: 0.6
+      duration: 0.6,
+      clearProps: "all"
     }, "-=0.4")
     .from(".hero-heading", {
       opacity: 0,
       y: 35,
-      duration: 1.0
+      duration: 1.0,
+      clearProps: "all"
     }, "-=0.3")
     .from(".hero-description", {
       opacity: 0,
       y: 20,
-      duration: 0.8
+      duration: 0.8,
+      clearProps: "all"
     }, "-=0.5")
     .from(".hero-cta-group", {
       opacity: 0,
       y: 20,
-      duration: 0.7
+      duration: 0.7,
+      clearProps: "all"
     }, "-=0.5")
     .from(".hero-image-frame", {
       scale: 0.96,
       opacity: 0,
       duration: 1.2,
-      ease: "power2.out"
+      ease: "power2.out",
+      clearProps: "all"
     }, "-=0.9")
     .from(".hero-floating-badge", {
       opacity: 0,
       x: -20,
-      duration: 0.8
+      duration: 0.8,
+      clearProps: "all"
     }, "-=0.5");
 
-  // Scroll reveals for section headings
-  if (typeof ScrollTrigger !== "undefined") {
-    document.querySelectorAll(".reveal-on-scroll").forEach(elem => {
-      gsap.from(elem, {
-        scrollTrigger: {
-          trigger: elem,
-          start: "top 85%",
-          once: true
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power2.out"
-      });
+  if (typeof ScrollTrigger === "undefined") {
+    // ScrollTrigger missing fallback
+    document.querySelectorAll(".pillar-card, .location-card, .section-head").forEach(el => {
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
     });
+    return;
   }
+
+  // Hero Subtle Parallax on Scroll
+  gsap.to(".hero-image-frame img", {
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1.2
+    },
+    y: 45,
+    scale: 1.07,
+    ease: "none"
+  });
+
+  // 01. The Aesthetic & Philosophy (#about)
+  gsap.fromTo("#about .statement-kicker", 
+    { opacity: 0, x: -25 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  gsap.fromTo("#about .statement-prose", 
+    { opacity: 0, y: 35 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.0,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 90%",
+        once: true
+      }
+    }
+  );
+
+  gsap.fromTo("#about .statement-sub", 
+    { opacity: 0, y: 25 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      delay: 0.1,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 88%",
+        once: true
+      }
+    }
+  );
+
+  // 02. Explore the Services (#services)
+  gsap.fromTo("#services .section-head", 
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#services",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  const serviceCards = document.querySelectorAll("#services-grid-container .service-card");
+  if (serviceCards.length) {
+    gsap.fromTo(serviceCards, 
+      { opacity: 0, y: 35 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.08,
+        duration: 0.8,
+        ease: "power3.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top 90%",
+          once: true
+        }
+      }
+    );
+  }
+
+  // 03. Style Gallery Editorial Entrance (#styles)
+  gsap.fromTo("#styles .section-head", 
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#styles",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  document.querySelectorAll(".gallery-item").forEach((item) => {
+    gsap.fromTo(item, 
+      { opacity: 0, y: 35 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        ease: "power3.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 95%",
+          once: true
+        }
+      }
+    );
+  });
+
+  // 04. Transformation Section (#transformation)
+  gsap.fromTo("#transformation .section-head", 
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#transformation",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  gsap.fromTo(".transformation-wrapper", 
+    { opacity: 0, scale: 0.97, y: 30 },
+    {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 0.95,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: ".transformation-wrapper",
+        start: "top 90%",
+        once: true
+      }
+    }
+  );
+
+  // 05. TikTok / Social Section (#social)
+  gsap.fromTo("#social .section-head", 
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: "#social",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  const socialCards = document.querySelectorAll("#social .social-card");
+  if (socialCards.length) {
+    gsap.fromTo(socialCards, 
+      { opacity: 0, y: 35 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.08,
+        duration: 0.8,
+        ease: "power3.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: "#social",
+          start: "top 90%",
+          once: true
+        }
+      }
+    );
+  }
+
+  // 06. Pillars of Care Section (#pillars) - BULLETPROOF GUARANTEE
+  const pillarsSection = document.getElementById("pillars") || document.querySelector(".pillars-section");
+  if (pillarsSection) {
+    const pHead = pillarsSection.querySelector(".section-head");
+    const pCards = pillarsSection.querySelectorAll(".pillar-card");
+
+    if (pHead) {
+      gsap.fromTo(pHead, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: pillarsSection,
+            start: "top 94%",
+            once: true
+          }
+        }
+      );
+    }
+
+    if (pCards.length) {
+      gsap.fromTo(pCards, 
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: pillarsSection,
+            start: "top 92%",
+            once: true
+          }
+        }
+      );
+    }
+  }
+
+  // 07. Experience & Rituals Section (#experience)
+  const expSection = document.getElementById("experience") || document.querySelector(".experience-section");
+  if (expSection) {
+    const expMedia = expSection.querySelector(".experience-media");
+    const expContent = expSection.querySelector(".experience-content");
+    const rituals = expSection.querySelectorAll(".ritual-item");
+
+    if (expMedia) {
+      gsap.fromTo(expMedia, 
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: expSection,
+            start: "top 90%",
+            once: true
+          }
+        }
+      );
+    }
+
+    if (expContent) {
+      gsap.fromTo(expContent, 
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: expSection,
+            start: "top 90%",
+            once: true
+          }
+        }
+      );
+    }
+
+    if (rituals.length) {
+      gsap.fromTo(rituals, 
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: expSection,
+            start: "top 88%",
+            once: true
+          }
+        }
+      );
+    }
+  }
+
+  // 08. Two Locations / Salons Section (#locations) - BULLETPROOF GUARANTEE
+  const locSection = document.getElementById("locations") || document.querySelector(".locations-section");
+  if (locSection) {
+    const lHead = locSection.querySelector(".section-head");
+    const lCards = locSection.querySelectorAll(".location-card");
+
+    if (lHead) {
+      gsap.fromTo(lHead, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: locSection,
+            start: "top 94%",
+            once: true
+          }
+        }
+      );
+    }
+
+    if (lCards.length) {
+      gsap.fromTo(lCards, 
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.8,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: locSection,
+            start: "top 92%",
+            once: true
+          }
+        }
+      );
+    }
+  }
+
+  // 09. Booking Section (#booking)
+  const bookSection = document.getElementById("booking") || document.querySelector(".booking-section");
+  if (bookSection) {
+    const bookInfo = bookSection.querySelector(".booking-info");
+    const bookCard = bookSection.querySelector(".booking-card");
+
+    if (bookInfo) {
+      gsap.fromTo(bookInfo, 
+        { opacity: 0, x: -25 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.85,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: bookSection,
+            start: "top 92%",
+            once: true
+          }
+        }
+      );
+    }
+
+    if (bookCard) {
+      gsap.fromTo(bookCard, 
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: bookSection,
+            start: "top 92%",
+            once: true
+          }
+        }
+      );
+    }
+  }
+
+  // 10. Site Footer (.site-footer)
+  gsap.fromTo(".footer-hero-statement", 
+    { opacity: 0, y: 35 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.95,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: ".site-footer",
+        start: "top 92%",
+        once: true
+      }
+    }
+  );
+
+  gsap.fromTo(".footer-grid > *", 
+    { opacity: 0, y: 25 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.08,
+      duration: 0.75,
+      ease: "power3.out",
+      clearProps: "all",
+      scrollTrigger: {
+        trigger: ".footer-grid",
+        start: "top 95%",
+        once: true
+      }
+    }
+  );
+
+  // Dynamic refresh for layout shifts (images, fonts)
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
+  document.querySelectorAll("img").forEach(img => {
+    if (!img.complete) {
+      img.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+    }
+  });
+
+  // Watchdog failsafe: Guarantee that Pillars and Salons cards are ALWAYS 100% visible
+  setTimeout(() => {
+    document.querySelectorAll(".pillar-card, .location-card, .section-head, .service-card").forEach(el => {
+      if (window.getComputedStyle(el).opacity === "0" || el.style.opacity === "0") {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+        el.style.visibility = "visible";
+      }
+    });
+  }, 600);
 }
 
 /* ==========================================================================
